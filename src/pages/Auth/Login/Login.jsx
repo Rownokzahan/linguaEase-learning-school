@@ -5,6 +5,7 @@ import image from "../../../assets/images/sign-in.avif";
 import { useForm } from "react-hook-form";
 import { ImEye } from "react-icons/im";
 import { RiEyeCloseLine } from "react-icons/ri";
+import SocialSignin from "../../../components/Shared/SocialSignin/SocialSignin";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -126,6 +127,7 @@ const Login = () => {
             </Link>
           </p>
         </form>
+        <SocialSignin/>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import image from "../../../assets/images/sign-in.avif";
 import { useForm } from "react-hook-form";
 import { ImEye } from "react-icons/im";
 import { RiEyeCloseLine } from "react-icons/ri";
+import SocialSignin from "../../../components/Shared/SocialSignin/SocialSignin";
 
 const Register = () => {
   const { signUp, setUserInfo } = useContext(AuthContext);
@@ -48,9 +49,9 @@ const Register = () => {
         <img src={image} alt="" />
       </div>
       <div className="flex flex-col mx-auto w-full p-6">
-        <div className="text-center text-3xl font-medium mb-10">Register</div>
+        <div className="text-center text-3xl font-medium mb-2">Register</div>
 
-        <p className="text-ui-red text-center mt-2 font-semibold">
+        <p className="text-red-600 text-center mb-8 font-semibold">
           {errorMessage}
         </p>
 
@@ -217,6 +218,7 @@ const Register = () => {
             </Link>
           </p>
         </form>
+        <SocialSignin/>
       </div>
     </div>
   );
