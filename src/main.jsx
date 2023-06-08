@@ -10,7 +10,9 @@ import router from "./routes/Routes/Routes";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <div className="max-w-[1536px] mx-auto">
+        <RouterProvider router={router} />
+      </div>
       <ToastContainer />
     </AuthProvider>
   </React.StrictMode>
