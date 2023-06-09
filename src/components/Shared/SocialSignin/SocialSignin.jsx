@@ -31,7 +31,7 @@ const SocialSignin = () => {
       <div className="text-center ">
         <button
           onClick={handleGoogleSignin}
-          className="border rounded-md shadow w-80 py-2 flex items-center gap-2 justify-center mx-auto"
+          className="border rounded-md shadow w-44 md:w-80 py-2 flex items-center gap-2 justify-center mx-auto"
         >
           <span className="font-semibold">Continue with</span>
           <FcGoogle className="text-xl mt-1" />
