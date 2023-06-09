@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="mt-28 pt-10 border-t bg-gray-50">
       <Container>
-        <div className="flex justify-between text-sm font-medium">
+        <div className="flex justify-between text-sm font-medium flex-wrap gap-8">
           <Logo />
           <div className="grid gap-2">
             <h5 className="text-lg font-semibold">Navigation</h5>
