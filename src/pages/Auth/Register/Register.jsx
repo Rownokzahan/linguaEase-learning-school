@@ -7,6 +7,7 @@ import { ImEye } from "react-icons/im";
 import { RiEyeCloseLine } from "react-icons/ri";
 import SocialSignin from "../../../components/Shared/SocialSignin/SocialSignin";
 import Container from "../../../components/Container";
+import { saveUserToDB } from "../../../api/auth";
 
 const Register = () => {
   const { signUp, setUserInfo } = useContext(AuthContext);
@@ -32,6 +33,9 @@ const Register = () => {
       .then(() => {
         setUserInfo(name, photo_url)
           .then(() => {
+            //save user info to the database
+            saveUserToDB(name, email, photo_url);
+
             reset();
             navigate("/login");
           })
@@ -149,7 +153,7 @@ const Register = () => {
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-2 bottom-2 cursor-pointer"
+                className="absolute right-2 top-4 cursor-pointer"
               >
                 {showPassword ? <ImEye /> : <RiEyeCloseLine />}
               </span>

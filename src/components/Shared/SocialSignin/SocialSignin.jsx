@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { saveUserToDB } from "../../../api/auth";
 
 const SocialSignin = () => {
   const { signInWithGoogle } = useContext(AuthContext);
@@ -11,7 +12,12 @@ const SocialSignin = () => {
 
   const handleGoogleSignin = () => {
     signInWithGoogle()
-      .then(() => {
+      .then((result) => {
+        const user = result.user;
+
+        // save user info to the database
+        saveUserToDB(user?.displayName, user?.email, user?.photoURL);
+
         navigate(from);
       })
       .catch((error) => {
