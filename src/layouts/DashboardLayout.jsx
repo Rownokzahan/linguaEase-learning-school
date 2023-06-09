@@ -1,8 +1,14 @@
+import { Outlet } from "react-router-dom";
+import Sidebar from "../components/Shared/Sidebar/Sidebar";
+
 const DashboardLayout = () => {
     return (
-        <div>
-            
+      <div className="flex">
+        <Sidebar />
+        <div className="flex-grow">
+          <Outlet />
         </div>
+      </div>
     );
 };
 

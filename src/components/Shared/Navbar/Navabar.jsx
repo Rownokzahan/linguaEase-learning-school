@@ -38,7 +38,7 @@ const Navbar = () => {
           />
           {showUserLinks && (
             <div className="absolute z-20 bg-white font-medium right-2 top-8 flex flex-col gap-2 border p-3 rounded-md rounded-se-none">
-              <Link className="p-2">Dashboard</Link>
+              <Link to="/dashboard" className="p-2">Dashboard</Link>
               <button
                 onClick={handleLogout}
                 className="bg-accent_2 py-1 px-2 rounded"
@@ -76,9 +76,9 @@ const Navbar = () => {
         <Container>
           {" "}
           <div className="flex justify-between items-center py-6">
-            <div>
-              <Link to="/">Logo</Link>
-            </div>
+            <Link to="/">
+              <Logo />
+            </Link>
             {!showMenu && (
               <button onClick={() => setShowMenu(true)}>
                 <HiMenu className="text-2xl text-accent_2" />
