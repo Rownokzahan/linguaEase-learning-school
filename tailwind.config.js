@@ -9,6 +9,10 @@ export default {
         accent_1: "#FFD700",
         accent_2: "#77DD77",
       },
+      fontFamily: {
+        crimson: ["'Crimson Pro'", "sans-serif"],
+        signika: ["'Signika Negative'", "sans-serif"],
+      },
     },
   },
   plugins: [],

@@ -5,6 +5,7 @@ import { HiOutlineXMark } from "react-icons/hi2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Container from "../../Container";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -60,11 +61,10 @@ const Navbar = () => {
       {/* Navbar for bigger screens */}
       <nav className="hidden md:block shadow mb-10">
         <Container>
-          {" "}
-          <div className="flex justify-between items-center py-8 font-medium">
-            <div>
-              <Link to="/">Logo</Link>
-            </div>
+          <div className="flex justify-between items-center py-4 font-medium">
+            <Link to="/">
+              <Logo />
+            </Link>
             <div className="flex gap-6 lg:gap-12">{navLinks}</div>
             {userLinksJSX}
           </div>
