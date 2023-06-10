@@ -8,12 +8,14 @@ const useUserRole = () => {
     queryKey: ["userRole", user?.email],
     enabled: !loading,
     queryFn: async () => {
-      const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/users/${user?.email}`
-      );
-
-      const role = res?.data?.role || "student";
-      return role;
+      try {
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/users/role/${user?.email}`
+        );
+        return res?.data;
+      } catch (error) {
+        console.log(error);
+      }
     },
   });
   return [userRole, isUserRoleLoading];
