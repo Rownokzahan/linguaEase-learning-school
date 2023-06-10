@@ -9,6 +9,7 @@ import DashboardLayout from "../../layouts/DashboardLayout";
 import PrivateRoute from "../PrivateRoute";
 import StudentRoute from "../StudentRoute";
 import SelectedPrograms from "../../pages/Dashboard/Student/SelectedPrograms/SelectedPrograms";
+import Payment from "../../pages/Dashboard/Student/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,14 @@ const router = createBrowserRouter([
         element: (
           <StudentRoute>
             <SelectedPrograms />
+          </StudentRoute>
+        ),
+      },
+      {
+        path: "payment/:id",
+        element: (
+          <StudentRoute>
+            <Payment />
           </StudentRoute>
         ),
       },
