@@ -10,6 +10,7 @@ import PrivateRoute from "../PrivateRoute";
 import StudentRoute from "../StudentRoute";
 import SelectedPrograms from "../../pages/Dashboard/Student/SelectedPrograms/SelectedPrograms";
 import Payment from "../../pages/Dashboard/Student/Payment/Payment";
+import EnrolledPrograms from "../../pages/Dashboard/Student/EnrolledPrograms/EnrolledPrograms";
 
 const router = createBrowserRouter([
   {
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
         path: "enrolled-programs",
         element: (
           <StudentRoute>
-            <SelectedPrograms />
+            <EnrolledPrograms />
           </StudentRoute>
         ),
       },
