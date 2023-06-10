@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../../../../components/SectionTitle";
 import Spinner from "../../../../components/Spinner";
-import EnrolledProgramRow from "./EnrolledProgramRow";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAuth from "../../../../hooks/useAuth";
+import PaymentRow from "./PaymentRow";
 
-const EnrolledPrograms = () => {
+const PaymentHistory = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [programs, setPrograms] = useState([]);
+  const [payments, setPayments] = useState([]);
   const [axiosSecure] = useAxiosSecure();
   const { user } = useAuth();
 
   useEffect(() => {
     axiosSecure
-      .get(`/enrolled-programs/${user?.email}`)
+      .get(`/payment-history/${user?.email}`)
       .then((res) => {
-        setPrograms(res.data);
+        setPayments(res.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -25,12 +25,12 @@ const EnrolledPrograms = () => {
   }, [axiosSecure, user]);
 
   const hasPrograms =
-    programs && Array.isArray(programs) && programs.length > 0;
+    payments && Array.isArray(payments) && payments.length > 0;
 
   return (
     <>
       <div className="p-12">
-        <SectionTitle label={"Enrolled programs"} />
+        <SectionTitle label={"Payment History"} />
 
         {isLoading ? (
           <Spinner />
@@ -54,17 +54,20 @@ const EnrolledPrograms = () => {
                         Duration
                       </td>
                       <td className="bg-accent_2 py-5 px-6 text-left">Fee</td>
-                      <td className="rounded-tr-2xl bg-accent_2 py-5 px-6 text-left">
+                      <td className="bg-accent_2 py-5 px-6 text-left">
                         Payment ID
+                      </td>
+                      <td className="rounded-tr-2xl bg-accent_2 py-5 px-6 text-left">
+                        Payment Date
                       </td>
                     </tr>
                   </thead>
 
                   <tbody className="divide-y-2">
-                    {programs?.map((program, index) => (
-                      <EnrolledProgramRow
-                        key={program._id}
-                        enrolledProgram={program}
+                    {payments?.map((payment, index) => (
+                      <PaymentRow
+                        key={payment._id}
+                        payment={payment}
                         index={index + 1}
                       />
                     ))}
@@ -74,11 +77,11 @@ const EnrolledPrograms = () => {
             </div>
           </>
         ) : (
-          "You have not enrolled in any classes yet"
+          "You have not made any payments yet"
         )}
       </div>
     </>
   );
 };
 
-export default EnrolledPrograms;
+export default PaymentHistory;
