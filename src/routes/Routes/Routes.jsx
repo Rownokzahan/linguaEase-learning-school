@@ -7,6 +7,8 @@ import Instructors from "../../pages/Frontend/Instructors/Instructors";
 import Programs from "../../pages/Frontend/Programs/Programs";
 import DashboardLayout from "../../layouts/DashboardLayout";
 import PrivateRoute from "../PrivateRoute";
+import StudentRoute from "../StudentRoute";
+import SelectedPrograms from "../../pages/Dashboard/Student/SelectedPrograms/SelectedPrograms";
 
 const router = createBrowserRouter([
   {
@@ -43,10 +45,24 @@ const router = createBrowserRouter([
         <DashboardLayout />
       </PrivateRoute>
     ),
-    children: [{
-      path: "student",
-      element:<></>
-    }],
+    children: [
+      {
+        path: "selected-programs",
+        element: (
+          <StudentRoute>
+            <SelectedPrograms />
+          </StudentRoute>
+        ),
+      },
+      {
+        path: "enrolled-programs",
+        element: (
+          <StudentRoute>
+            <SelectedPrograms />
+          </StudentRoute>
+        ),
+      },
+    ],
   },
 ]);
 
