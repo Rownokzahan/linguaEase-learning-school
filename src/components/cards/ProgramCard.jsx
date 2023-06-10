@@ -4,8 +4,10 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { addToSelecedPrograms } from "../../api/selectedPrograms";
 import { useLocation, useNavigate } from "react-router";
 import { toast } from "react-hot-toast";
+import useAuth from "../../hooks/useAuth";
 
 const ProgramCard = ({ program, userRole }) => {
+  const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const {
@@ -28,7 +30,7 @@ const ProgramCard = ({ program, userRole }) => {
       navigate("/login", { state: { from: location }, replace: true });
       return;
     }
-    addToSelecedPrograms(program);
+    addToSelecedPrograms(program, user);
   };
 
   return (
