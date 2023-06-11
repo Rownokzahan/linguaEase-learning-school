@@ -17,6 +17,7 @@ import InstuctorRoute from "../InstructorRoute";
 import AddProgram from "../../pages/Dashboard/Instructor/AddProgram/AddProgram";
 import MyPrograms from "../../pages/Dashboard/Instructor/MyPrograms/MyPrograms";
 import AdminRoute from "../AdminRoute";
+import ManageUsers from "../../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 
 const router = createBrowserRouter([
   {
@@ -118,7 +119,7 @@ const router = createBrowserRouter([
         path: "manage-users",
         element: (
           <AdminRoute>
-            <MyPrograms />
+            <ManageUsers />
           </AdminRoute>
         ),
       },
