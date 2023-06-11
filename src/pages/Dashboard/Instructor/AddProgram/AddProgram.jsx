@@ -7,12 +7,14 @@ import { SiGoogleclassroom } from "react-icons/si";
 import useAuth from "../../../../hooks/useAuth";
 import { FaCircleNotch } from "react-icons/fa";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddProgram = () => {
   const { user } = useAuth();
   const [axiosSecure] = useAxiosSecure();
   const [loading, setLoading] = useState(false);
   const image_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -51,6 +53,7 @@ const AddProgram = () => {
               if (data.data.insertedId) {
                 reset();
                 toast.success("Program Added Successfully!");
+                navigate("/dashboard/my-programs");
               }
               setLoading(false);
             })
