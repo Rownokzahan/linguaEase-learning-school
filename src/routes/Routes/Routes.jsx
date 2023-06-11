@@ -13,6 +13,9 @@ import Payment from "../../pages/Dashboard/Student/Payment/Payment";
 import EnrolledPrograms from "../../pages/Dashboard/Student/EnrolledPrograms/EnrolledPrograms";
 import PaymentHistory from "../../pages/Dashboard/Student/PaymentHistory/PaymentHistory";
 import Dashboard from "../../pages/Dashboard/Dashboard/Dashboard";
+import InstuctorRoute from "../InstructorRoute";
+import AddProgram from "../../pages/Dashboard/Instructor/AddProgram/AddProgram";
+import MyPrograms from "../../pages/Dashboard/Instructor/MyPrograms/MyPrograms";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +87,22 @@ const router = createBrowserRouter([
           <StudentRoute>
             <PaymentHistory />
           </StudentRoute>
+        ),
+      },
+      {
+        path: "add-program",
+        element: (
+          <InstuctorRoute>
+            <AddProgram />
+          </InstuctorRoute>
+        ),
+      },
+      {
+        path: "my-programs",
+        element: (
+          <InstuctorRoute>
+            <MyPrograms />
+          </InstuctorRoute>
         ),
       },
     ],
