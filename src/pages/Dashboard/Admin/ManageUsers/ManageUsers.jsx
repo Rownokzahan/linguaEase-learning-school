@@ -26,7 +26,7 @@ const ManageUsers = () => {
     setRefreshUsers(false);
   }, [axiosSecure, refreshUsers]);
 
-  const hasPrograms = users && Array.isArray(users) && users.length > 0;
+  const hasUsers = users && Array.isArray(users) && users.length > 0;
 
   return (
     <>
@@ -39,7 +39,7 @@ const ManageUsers = () => {
 
         {isLoading ? (
           <Spinner />
-        ) : hasPrograms ? (
+        ) : hasUsers ? (
           <>
             <div className="w-max mx-auto">
               <div className="overflow-x-auto">
