@@ -10,19 +10,11 @@ const ProgramCard = ({ program, userRole }) => {
   const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const {
-    title,
-    displayImage,
-    instructor,
-    duration,
-    price,
-    capacity,
-    enrolled,
-  } = program || {};
+  const { title, displayImage, instructor, duration, price, available_seats } =
+    program || {};
 
-  const availableSeats = capacity - enrolled;
   const hideButton =
-    !availableSeats || userRole === "admin" || userRole === "instructor";
+    !available_seats || userRole === "admin" || userRole === "instructor";
 
   const handleSelectedProgram = () => {
     if (userRole === "none") {
@@ -36,7 +28,7 @@ const ProgramCard = ({ program, userRole }) => {
   return (
     <div
       className={`border rounded-2xl shadow group relative ${
-        !availableSeats && "bg-red-400"
+        !available_seats && "bg-red-400"
       }`}
     >
       <div className="p-4">
@@ -61,7 +53,7 @@ const ProgramCard = ({ program, userRole }) => {
             <IoCalendar /> {duration} weeks
           </p>
           <p className="flex items-center gap-2">
-            <SiGoogleclassroom /> {availableSeats} Seats
+            <SiGoogleclassroom /> {available_seats} Seats
           </p>
         </div>
       </div>

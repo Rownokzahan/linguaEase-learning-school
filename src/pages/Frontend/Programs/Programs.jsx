@@ -4,10 +4,12 @@ import Container from "../../../components/Container";
 import SectionTitle from "../../../components/SectionTitle";
 import ProgramCard from "../../../components/cards/ProgramCard";
 import Spinner from "../../../components/Spinner";
+import useUserRole from "../../../hooks/useUserRole";
 
 const Programs = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [userRole, isUserRoleLoading] = useUserRole();
   const [programs, setPrograms] = useState([]);
+  const [isProgramsLoading, setIsProgramsLoading] = useState(true);
 
   useEffect(() => {
     const fetchPrograms = async () => {
@@ -16,16 +18,17 @@ const Programs = () => {
           `${import.meta.env.VITE_API_URL}/programs`
         );
         setPrograms(response?.data);
-        setIsLoading(false);
+        setIsProgramsLoading(false);
       } catch (error) {
         console.log("Error fetching programs:", error);
-        setIsLoading(false);
+        setIsProgramsLoading(false);
       }
     };
 
     fetchPrograms();
   }, []);
 
+  const isLoading = isProgramsLoading || isUserRoleLoading;
   const hasPrograms =
     programs && Array.isArray(programs) && programs.length > 0;
 
@@ -38,7 +41,11 @@ const Programs = () => {
       ) : hasPrograms ? (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program) => (
-            <ProgramCard key={program._id} program={program} />
+            <ProgramCard
+              key={program._id}
+              program={program}
+              userRole={userRole}
+            />
           ))}
         </div>
       ) : (
