@@ -1,19 +1,18 @@
 import { Navigate, useLocation } from "react-router-dom";
-import useAdmin from "../hooks/useAdmin";
 import Spinner from "../components/Spinner";
-import { useContext } from "react";
-import { AuthContext } from "../providers/AuthProvider";
+import useAuth from "../hooks/useAuth";
+import useUserRole from "../hooks/useUserRole";
 
 const AdminRoute = ({ children }) => {
-  const { user, loading } = useContext(AuthContext);
-  const [isAdmin, isAdminLoading] = useAdmin();
+  const { user, loading } = useAuth();
+  const [userRole, isUserRoleLoading] = useUserRole();
   const location = useLocation();
 
-  if (loading || isAdminLoading) {
+  if (loading || isUserRoleLoading) {
     return <Spinner />;
   }
 
-  if (!user || !isAdmin) {
+  if (!user || userRole !== "admin") {
     return <Navigate state={{ from: location }} to={"/login"} replace={true} />;
   }
 

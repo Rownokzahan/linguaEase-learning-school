@@ -16,6 +16,7 @@ import Dashboard from "../../pages/Dashboard/Dashboard/Dashboard";
 import InstuctorRoute from "../InstructorRoute";
 import AddProgram from "../../pages/Dashboard/Instructor/AddProgram/AddProgram";
 import MyPrograms from "../../pages/Dashboard/Instructor/MyPrograms/MyPrograms";
+import AdminRoute from "../AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,22 @@ const router = createBrowserRouter([
           <InstuctorRoute>
             <MyPrograms />
           </InstuctorRoute>
+        ),
+      },
+      {
+        path: "manage-programs",
+        element: (
+          <AdminRoute>
+            <MyPrograms />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manage-users",
+        element: (
+          <AdminRoute>
+            <MyPrograms />
+          </AdminRoute>
         ),
       },
     ],
