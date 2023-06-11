@@ -12,6 +12,7 @@ import SelectedPrograms from "../../pages/Dashboard/Student/SelectedPrograms/Sel
 import Payment from "../../pages/Dashboard/Student/Payment/Payment";
 import EnrolledPrograms from "../../pages/Dashboard/Student/EnrolledPrograms/EnrolledPrograms";
 import PaymentHistory from "../../pages/Dashboard/Student/PaymentHistory/PaymentHistory";
+import Dashboard from "../../pages/Dashboard/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      {
+        path: "",
+        element: <Dashboard />,
+      },
       {
         path: "selected-programs",
         element: (
