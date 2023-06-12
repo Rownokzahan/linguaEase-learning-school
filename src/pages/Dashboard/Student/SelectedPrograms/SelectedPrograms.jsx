@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../../components/SectionTitle";
 import Spinner from "../../../../components/Spinner";
 import useSelectedProgram from "../../../../hooks/useSelectedProgram";
@@ -11,6 +12,10 @@ const SelectedPrograms = () => {
 
   return (
     <>
+      <Helmet>
+        <title>LinguaEase | Selected Programs</title>
+      </Helmet>
+
       <div className="p-12">
         <SectionTitle label={"Selected programs"} />
 

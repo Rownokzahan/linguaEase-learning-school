@@ -31,7 +31,7 @@ const ManageUsers = () => {
   return (
     <>
       <Helmet>
-        <title>LinguaEase | All Users</title>
+        <title>LinguaEase | Manage Users</title>
       </Helmet>
 
       <div className="p-12">

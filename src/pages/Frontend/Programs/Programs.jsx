@@ -5,6 +5,7 @@ import SectionTitle from "../../../components/SectionTitle";
 import ProgramCard from "../../../components/cards/ProgramCard";
 import Spinner from "../../../components/Spinner";
 import useUserRole from "../../../hooks/useUserRole";
+import { Helmet } from "react-helmet-async";
 
 const Programs = () => {
   const [userRole, isUserRoleLoading] = useUserRole();
@@ -33,25 +34,31 @@ const Programs = () => {
     programs && Array.isArray(programs) && programs.length > 0;
 
   return (
-    <Container>
-      <SectionTitle label={"All Programs"} />
+    <>
+      <Helmet>
+        <title>LinguaEase | Programs</title>
+      </Helmet>
 
-      {isLoading ? (
-        <Spinner fullscreen={false} />
-      ) : hasPrograms ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {programs.map((program) => (
-            <ProgramCard
-              key={program._id}
-              program={program}
-              userRole={userRole}
-            />
-          ))}
-        </div>
-      ) : (
-        "No programs found"
-      )}
-    </Container>
+      <Container>
+        <SectionTitle label={"All Programs"} />
+
+        {isLoading ? (
+          <Spinner fullscreen={false} />
+        ) : hasPrograms ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {programs.map((program) => (
+              <ProgramCard
+                key={program._id}
+                program={program}
+                userRole={userRole}
+              />
+            ))}
+          </div>
+        ) : (
+          "No programs found"
+        )}
+      </Container>
+    </>
   );
 };
 

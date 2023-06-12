@@ -5,6 +5,7 @@ import SectionTitle from "../../../../components/SectionTitle";
 import Spinner from "../../../../components/Spinner";
 import ProgramRow from "./ProgramRow";
 import ViewFeedbackModal from "./ViewFeedbackModal";
+import { Helmet } from "react-helmet-async";
 
 const MyPrograms = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +33,10 @@ const MyPrograms = () => {
 
   return (
     <>
+      <Helmet>
+        <title>LinguaEase | My Programs</title>
+      </Helmet>
+
       <div className="p-12">
         <SectionTitle label={"My Programs"} />
 

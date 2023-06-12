@@ -6,6 +6,7 @@ import SectionTitle from "../../../../components/SectionTitle";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import CheckoutForm from "./CheckoutForm";
 import Spinner from "../../../../components/Spinner";
+import { Helmet } from "react-helmet-async";
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYEMENT_GATEWAY_PK);
 
@@ -32,6 +33,10 @@ const Payment = () => {
 
   return (
     <>
+      <Helmet>
+        <title>LinguaEase | Payment</title>
+      </Helmet>
+
       <div className="p-12">
         <SectionTitle label={"Complete Payment"} />
         {isProgramLoading ? (

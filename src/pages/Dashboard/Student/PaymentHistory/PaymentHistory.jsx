@@ -4,6 +4,7 @@ import Spinner from "../../../../components/Spinner";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAuth from "../../../../hooks/useAuth";
 import PaymentRow from "./PaymentRow";
+import { Helmet } from "react-helmet-async";
 
 const PaymentHistory = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,10 @@ const PaymentHistory = () => {
 
   return (
     <>
+      <Helmet>
+        <title>LinguaEase | Payment History</title>
+      </Helmet>
+
       <div className="p-12">
         <SectionTitle label={"Payment History"} />
 

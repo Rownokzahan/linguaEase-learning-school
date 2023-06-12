@@ -4,6 +4,7 @@ import Container from "../../../components/Container";
 import SectionTitle from "../../../components/SectionTitle";
 import InstructorCard from "../../../components/cards/InstructorCard";
 import Spinner from "../../../components/Spinner";
+import { Helmet } from "react-helmet-async";
 
 const Instructors = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,21 +31,27 @@ const Instructors = () => {
     instructors && Array.isArray(instructors) && instructors.length > 0;
 
   return (
-    <Container>
-      <SectionTitle label={"All Instructors"} />
+    <>
+      <Helmet>
+        <title>LinguaEase | Instructors</title>
+      </Helmet>
 
-      {isLoading ? (
-        <Spinner fullscreen={false} />
-      ) : hasInstructors ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {instructors.map((instructor) => (
-            <InstructorCard key={instructor._id} instructor={instructor} />
-          ))}
-        </div>
-      ) : (
-        "No instructors found"
-      )}
-    </Container>
+      <Container>
+        <SectionTitle label={"All Instructors"} />
+
+        {isLoading ? (
+          <Spinner fullscreen={false} />
+        ) : hasInstructors ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {instructors.map((instructor) => (
+              <InstructorCard key={instructor._id} instructor={instructor} />
+            ))}
+          </div>
+        ) : (
+          "No instructors found"
+        )}
+      </Container>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import Spinner from "../../../../components/Spinner";
 import EnrolledProgramRow from "./EnrolledProgramRow";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAuth from "../../../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const EnrolledPrograms = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,10 @@ const EnrolledPrograms = () => {
 
   return (
     <>
+      <Helmet>
+        <title>LinguaEase | Enrolled Programs</title>
+      </Helmet>
+
       <div className="p-12">
         <SectionTitle label={"Enrolled programs"} />
 
