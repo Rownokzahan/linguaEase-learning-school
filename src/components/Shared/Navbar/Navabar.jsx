@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import ActiveLink from "./ActiveLink";
-import { HiMenu } from "react-icons/hi";
+import { HiMenu, HiMoon, HiSun } from "react-icons/hi";
 import { HiOutlineXMark } from "react-icons/hi2";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Container from "../../Container";
 import Logo from "../Logo/Logo";
@@ -10,6 +10,24 @@ import Logo from "../Logo/Logo";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { user, logout } = useContext(AuthContext);
+  const [darkMode, setDarkMode] = useState(false);
+  const [control, setControl] = useState(true);
+
+  useEffect(() => {
+    const isDark = localStorage.getItem("isDark");
+    if (isDark === "true") {
+      document.getElementById("body").classList.add("dark");
+    } else {
+      document.getElementById("body").classList.remove("dark");
+    }
+  }, [darkMode, control]);
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem("isDark", newDarkMode);
+    setControl(!control);
+  };
 
   const handleLogout = () => {
     logout()
@@ -23,6 +41,14 @@ const Navbar = () => {
       <ActiveLink to="/programs">Programs</ActiveLink>
       <ActiveLink to="/instructors">Instructors</ActiveLink>
       {user && <ActiveLink to="/dashboard">Dashboard</ActiveLink>}
+
+      <button onClick={toggleDarkMode}>
+        {darkMode ? (
+          <HiSun className="text-xl" />
+        ) : (
+          <HiMoon className="text-xl" />
+        )}
+      </button>
     </>
   );
 
