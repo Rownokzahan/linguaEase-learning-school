@@ -1,13 +1,14 @@
 import { IoCalendar } from "react-icons/io5";
 import { SiGoogleclassroom } from "react-icons/si";
 import { AiOutlinePlus } from "react-icons/ai";
-import { addToSelecedPrograms } from "../../api/selectedPrograms";
 import { useLocation, useNavigate } from "react-router";
 import { toast } from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ProgramCard = ({ program, userRole }) => {
   const { user } = useAuth();
+  const [axiosSecure] = useAxiosSecure();
   const location = useLocation();
   const navigate = useNavigate();
   const { title, displayImage, instructor, duration, price, available_seats } =
@@ -22,7 +23,22 @@ const ProgramCard = ({ program, userRole }) => {
       navigate("/login", { state: { from: location }, replace: true });
       return;
     }
-    addToSelecedPrograms(program, user);
+
+    // Save selected program to database
+    const selectedProgram = { email: user?.email, programId: program?._id };
+    axiosSecure
+      .post(`/selected-programs`, selectedProgram)
+      .then((res) => {
+        if (res?.data?.insertedId) {
+          toast.success("Program selected successfully!");
+        }
+        if (res?.data?.message === "already exists") {
+          toast.error("You have already selected this program!");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
