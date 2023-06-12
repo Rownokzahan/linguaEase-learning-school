@@ -8,7 +8,7 @@ import Logo from "../Logo/Logo";
 
 const Footer = ({ topMargin = "mt-28" }) => {
   return (
-    <footer className={`${topMargin} pt-10 border-t bg-gray-50`}>
+    <footer className={`${topMargin} pt-10 border-t bg-gray-50 dark:bg-black`}>
       <Container>
         <div className="flex justify-between text-sm font-medium flex-wrap gap-8">
           <Logo />
