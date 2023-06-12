@@ -5,11 +5,12 @@
     "instructor_email": "jeanne@example.com",
     "duration": 4,
     "price": 250,
-    "capacity": 20,
-    "enrolled": 12,
+    "available_seats": 8,
+    "enrolled": 20,
     "displayImage": "https://img.freepik.com/free-vector/learning-french-concept-illustration_114360-16502.jpg?size=626&ext=jpg&ga=GA1.2.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "beginner"
+    "level": "beginner",
+    "feedback": "N/A"
   },
   {
     "title": "Advanced Spanish",
@@ -17,11 +18,12 @@
     "instructor_email": "carlos@example.com",
     "duration": 6,
     "price": 350,
-    "capacity": 15,
+    "available_seats": 12,
     "enrolled": 8,
     "displayImage": "https://img.freepik.com/free-vector/spanish-concept-illustration_114360-15686.jpg?size=626&ext=jpg&ga=GA1.1.220986669.1676533650&semt=ais",
-    "status": "pending",
-    "level": "advanced"
+    "status": "approved",
+    "level": "advanced",
+    "feedback": "N/A"
   },
   {
     "title": "Intermediate German",
@@ -29,11 +31,12 @@
     "instructor_email": "anna@example.com",
     "duration": 3,
     "price": 200,
-    "capacity": 18,
+    "available_seats": 15,
     "enrolled": 10,
     "displayImage": "https://img.freepik.com/free-vector/boy-girl-with-flag-germany_1308-9849.jpg?size=626&ext=jpg&ga=GA1.2.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "intermediate"
+    "level": "intermediate",
+    "feedback": "N/A"
   },
   {
     "title": "Beginner Italian",
@@ -41,11 +44,12 @@
     "instructor_email": "giuseppe@example.com",
     "duration": 4,
     "price": 230,
-    "capacity": 16,
+    "available_seats": 16,
     "enrolled": 14,
     "displayImage": "https://img.freepik.com/free-vector/language-learning-camp-abstract-concept-illustration_335657-3920.jpg?size=626&ext=jpg&ga=GA1.1.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "beginner"
+    "level": "beginner",
+    "feedback": "N/A"
   },
   {
     "title": "Advanced Mandarin",
@@ -53,11 +57,12 @@
     "instructor_email": "liwei@example.com",
     "duration": 5,
     "price": 300,
-    "capacity": 20,
+    "available_seats": 0,
     "enrolled": 18,
     "displayImage": "https://img.freepik.com/free-vector/hand-drawn-vowels-illustration_23-2150142549.jpg?size=626&ext=jpg&ga=GA1.2.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "advanced"
+    "level": "advanced",
+    "feedback": "N/A"
   },
   {
     "title": "Beginner Russian",
@@ -65,11 +70,12 @@
     "instructor_email": "natalia@example.com",
     "duration": 3,
     "price": 180,
-    "capacity": 15,
+    "available_seats": 15,
     "enrolled": 10,
     "displayImage": "https://img.freepik.com/premium-vector/russia-flag-with-male-teacher-learning-teaching-russia-language-school-concept_655111-4593.jpg?size=626&ext=jpg&ga=GA1.1.220986669.1676533650&semt=ais",
-    "status": "pending",
-    "level": "beginner"
+    "status": "approved",
+    "level": "beginner",
+    "feedback": "N/A"
   },
   {
     "title": "Intermediate Japanese",
@@ -77,11 +83,12 @@
     "instructor_email": "yuki@example.com",
     "duration": 4,
     "price": 240,
-    "capacity": 20,
+    "available_seats": 13,
     "enrolled": 16,
     "displayImage": "https://img.freepik.com/free-vector/japanese-calligraphy-concept-illustration_114360-4181.jpg?size=626&ext=jpg&ga=GA1.1.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "intermediate"
+    "level": "intermediate",
+    "feedback": "N/A"
   },
   {
     "title": "Advanced French",
@@ -89,11 +96,12 @@
     "instructor_email": "pierre@example.com",
     "duration": 6,
     "price": 350,
-    "capacity": 18,
+    "available_seats": 18,
     "enrolled": 12,
     "displayImage": "https://img.freepik.com/free-vector/learning-french-concept-illustration_114360-16502.jpg?size=626&ext=jpg&ga=GA1.2.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "advanced"
+    "level": "advanced",
+    "feedback": "N/A"
   },
   {
     "title": "Intermediate Spanish",
@@ -101,11 +109,12 @@
     "instructor_email": "maria@example.com",
     "duration": 5,
     "price": 270,
-    "capacity": 15,
+    "available_seats": 15,
     "enrolled": 10,
     "displayImage": "https://img.freepik.com/free-vector/hand-drawn-spanish-language-illustration_23-2149598253.jpg?size=626&ext=jpg&ga=GA1.1.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "intermediate"
+    "level": "intermediate",
+    "feedback": "N/A"
   },
   {
     "title": "Beginner Chinese",
@@ -113,11 +122,12 @@
     "instructor_email": "liwei@example.com",
     "duration": 4,
     "price": 220,
-    "capacity": 20,
+    "available_seats": 11,
     "enrolled": 18,
     "displayImage": "https://img.freepik.com/free-vector/learning-chinese-concept-illustration_114360-16499.jpg?size=626&ext=jpg&ga=GA1.1.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "beginner"
+    "level": "beginner",
+    "feedback": "N/A"
   },
   {
     "title": "Advanced German",
@@ -125,11 +135,12 @@
     "instructor_email": "hans@example.com",
     "duration": 6,
     "price": 380,
-    "capacity": 15,
+    "available_seats": 7,
     "enrolled": 12,
     "displayImage": "https://img.freepik.com/premium-vector/germans-talk-have-conversation-learning-german-language-lesson-with-tutor-teacher-communication-vector-banner-background-study-tradition-culture-education-theme_570502-54.jpg?size=626&ext=jpg&ga=GA1.2.220986669.1676533650&semt=ais",
-    "status": "pending",
-    "level": "advanced"
+    "status": "approved",
+    "level": "advanced",
+    "feedback": "N/A"
   },
   {
     "title": "Intermediate Italian",
@@ -137,22 +148,24 @@
     "instructor_email": "isabella@example.com",
     "duration": 4,
     "price": 250,
-    "capacity": 18,
+    "available_seats": 7,
     "enrolled": 14,
     "displayImage": "https://img.freepik.com/premium-vector/people-italian-language-web-mobile-app-presentations_697410-3144.jpg?size=626&ext=jpg&ga=GA1.1.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "intermediate"
+    "level": "intermediate",
+    "feedback": "N/A"
   },
-    {
+  {
     "title": "Beginner Portuguese",
     "instructor": "Ana Silva",
     "instructor_email": "ana@example.com",
     "duration": 4,
     "price": 250,
-    "capacity": 20,
+    "available_seats": 9,
     "enrolled": 15,
     "displayImage": "https://img.freepik.com/free-vector/hand-drawn-portuguese-language-illustration_23-2149824010.jpg?size=626&ext=jpg&ga=GA1.2.220986669.1676533650&semt=ais",
     "status": "approved",
-    "level": "beginner"
+    "level": "beginner",
+    "feedback": "N/A"
   }
 ]

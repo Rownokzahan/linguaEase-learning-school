@@ -19,11 +19,13 @@ import MyPrograms from "../../pages/Dashboard/Instructor/MyPrograms/MyPrograms";
 import AdminRoute from "../AdminRoute";
 import ManageUsers from "../../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import ManagePrograms from "../../pages/Dashboard/Admin/ManagePrograms/ManagePrograms";
+import ErrorPage from "../../pages/Error/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <FrontendLayout />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",
