@@ -6,9 +6,9 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { TbBrandGithub } from "react-icons/tb";
 import Logo from "../Logo/Logo";
 
-const Footer = () => {
+const Footer = ({ topMargin = "mt-28" }) => {
   return (
-    <footer className="mt-28 pt-10 border-t bg-gray-50">
+    <footer className={`${topMargin} pt-10 border-t bg-gray-50`}>
       <Container>
         <div className="flex justify-between text-sm font-medium flex-wrap gap-8">
           <Logo />
