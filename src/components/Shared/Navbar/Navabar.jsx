@@ -9,7 +9,6 @@ import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [showUserLinks, setShowUserLinks] = useState(false);
   const { user, logout } = useContext(AuthContext);
 
   const handleLogout = () => {
@@ -23,31 +22,27 @@ const Navbar = () => {
       <ActiveLink to="/">Home</ActiveLink>
       <ActiveLink to="/programs">Programs</ActiveLink>
       <ActiveLink to="/instructors">Instructors</ActiveLink>
+      {user && <ActiveLink to="/dashboard">Dashboard</ActiveLink>}
     </>
   );
 
-  const userLinksJSX = (
+  const userLinks = (
     <>
       {user ? (
-        <div className="relative">
+        <>
           <img
             src={user.photoURL}
             alt=""
-            className="w-6 h-6 object-cover rounded-full border-2 cursor-pointer"
-            onClick={() => setShowUserLinks(!showUserLinks)}
+            className="w-7 h-7 object-cover rounded-full border-2 cursor-pointer"
           />
-          {showUserLinks && (
-            <div className="absolute z-20 bg-white font-medium right-2 top-8 flex flex-col gap-2 border p-3 rounded-md rounded-se-none">
-              <Link to="/dashboard" className="p-2">Dashboard</Link>
-              <button
-                onClick={handleLogout}
-                className="bg-accent_2 py-1 px-2 rounded"
-              >
-                Logout
-              </button>
-            </div>
-          )}
-        </div>
+
+          <button
+            onClick={handleLogout}
+            className="bg-accent_2 py-1 px-2 rounded"
+          >
+            Logout
+          </button>
+        </>
       ) : (
         <Link to="/login" className="bg-accent_2 py-1 px-2 rounded">
           Login
@@ -65,8 +60,8 @@ const Navbar = () => {
             <Link to="/">
               <Logo />
             </Link>
-            <div className="flex gap-6 lg:gap-12">{navLinks}</div>
-            {userLinksJSX}
+            <div className="flex items-center gap-6 lg:gap-12">{navLinks}</div>
+            <div className="flex items-center gap-6">{userLinks}</div>
           </div>
         </Container>
       </nav>
@@ -74,7 +69,6 @@ const Navbar = () => {
       {/* Navbar for smaller screens */}
       <nav className="md:hidden relative shadow mb-10">
         <Container>
-          {" "}
           <div className="flex justify-between items-center py-6">
             <Link to="/">
               <Logo />
@@ -84,7 +78,7 @@ const Navbar = () => {
                 <HiMenu className="text-2xl text-accent_2" />
               </button>
             )}
-            {userLinksJSX}
+            <div className="flex gap-4 items-center">{userLinks}</div>
           </div>
           {/* Hidden Menu */}
           <div
