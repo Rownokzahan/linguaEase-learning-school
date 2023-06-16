@@ -1,6 +1,7 @@
 # LinguEase
 
-Live Link: [https://linguaease.web.app/](https://linguaease.web.app/)
+Live Link : <a href="https://linguaease.web.app/"
+target="_blank">https://linguaease.web.app/</a>
 
 Welcome to LinguaEase! LinguaEase is a summer camp for foreign lanuage learning school dedicated to providing language learning opportunities for students of all ages. Whether you're a beginner or looking to improve your language skills, our camp offers a wide range of language classes taught by experienced instructors.
 
@@ -42,8 +43,8 @@ LinguaEase is a language learning school where students can enroll in various la
 
 ## Installation
 
-1. Clone the repository: `git clone [repository URL]`
-2. Navigate to the project directory: `cd lingu-ease`
+1. Clone the repository: `git clone https://github.com/Rownokzahan/linguaEase-learning-school`
+2. Navigate to the project directory: `cd linguaEase-learning-school`
 3. Install the dependencies: `npm install`
 
 ## Usage
