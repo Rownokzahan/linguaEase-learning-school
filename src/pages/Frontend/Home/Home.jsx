@@ -6,6 +6,7 @@ import WhyUs from "./WhyUs";
 import Review from "./Review";
 import Subscribe from "./Subscribe";
 import Partners from "./Partners";
+import LinguaEaseNumbers from "../LinguaEaseNumbers";
 
 const Home = () => {
   return (
@@ -19,9 +20,10 @@ const Home = () => {
       </div>
       <PopularPrograms />
       <PopularInstructors />
+      <LinguaEaseNumbers />
+      <Subscribe />
       <WhyUs />
       <Review />
-      <Subscribe />
       <Partners />
     </>
   );
