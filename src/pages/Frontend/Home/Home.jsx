@@ -3,6 +3,7 @@ import Banner from "./Banner/Banner";
 import PopularInstructors from "./PopularInstructors";
 import PopularPrograms from "./PopularPrograms";
 import WhyUs from "./WhyUs";
+import Review from "./Review";
 
 const Home = () => {
   return (
@@ -16,7 +17,8 @@ const Home = () => {
       </div>
       <PopularPrograms />
       <PopularInstructors />
-      <WhyUs/>
+      <WhyUs />
+      <Review />
     </>
   );
 };
