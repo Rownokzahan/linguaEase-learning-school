@@ -4,6 +4,7 @@ import PopularInstructors from "./PopularInstructors";
 import PopularPrograms from "./PopularPrograms";
 import WhyUs from "./WhyUs";
 import Review from "./Review";
+import Subscribe from "./Subscribe";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <PopularInstructors />
       <WhyUs />
       <Review />
+      <Subscribe />
     </>
   );
 };
