@@ -5,6 +5,7 @@ import PopularPrograms from "./PopularPrograms";
 import WhyUs from "./WhyUs";
 import Review from "./Review";
 import Subscribe from "./Subscribe";
+import Partners from "./Partners";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <WhyUs />
       <Review />
       <Subscribe />
+      <Partners />
     </>
   );
 };
