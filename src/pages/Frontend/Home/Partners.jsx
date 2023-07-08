@@ -21,7 +21,7 @@ const Partners = () => {
     <div className="mt-28">
       <Container>
         <SectionTitle label="Our Partners" />
-        <div className="flex gap-8 items-center flex-wrap justify-around">
+        <div className="flex gap-8 items-center flex-wrap justify-between">
           {partnerImages.map((image, index) => (
             <img key={index} src={image} alt={`Partner ${index + 1}`} />
           ))}

@@ -21,8 +21,8 @@ const Home = () => {
       <PopularPrograms />
       <PopularInstructors />
       <LinguaEaseNumbers />
-      <Subscribe />
       <WhyUs />
+      <Subscribe />
       <Review />
       <Partners />
     </>
